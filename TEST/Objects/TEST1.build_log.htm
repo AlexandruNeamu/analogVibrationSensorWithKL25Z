@@ -1,0 +1,204 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Alexandru Neamu, student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.36.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.4.0
+Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Dialog DLL:      TARMCM1.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+E:\Facultate\Cursuri\A4S1\SSMP\TEMA\TEST\TEST1.uvprojx
+Project File Date:  01/08/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+Adc.c(1): warning: In file included from...
+./Adc.h(6): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void calibrateADC(); // Calibrarea adc ului
+                 ^
+                  void
+./Adc.h(6): warning: no newline at end of file [-Wnewline-eof]
+void calibrateADC(); // Calibrarea adc ului
+                                           ^
+Adc.c(19): warning: implicit conversion loses integer precision: 'const volatile uint32_t' (aka 'const volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return ADC0_RA;  // returnam ce se afla in registrul ADC DATA RESTULT
+        ~~~~~~ ^~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(572): note: expanded from macro 'ADC0_RA'
+#define ADC0_RA                                  ADC_R_REG(ADC0,0)
+                                                 ^~~~~~~~~~~~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(294): note: expanded from macro 'ADC_R_REG'
+#define ADC_R_REG(base,index)                    ((base)->R[index])
+                                                  ^~~~~~~~~~~~~~~~
+Adc.c(28): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        aux = ADC0_CLP0;
+            ~ ^~~~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(587): note: expanded from macro 'ADC0_CLP0'
+#define ADC0_CLP0                                ADC_CLP0_REG(ADC0)
+                                                 ^~~~~~~~~~~~~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(309): note: expanded from macro 'ADC_CLP0_REG'
+#define ADC_CLP0_REG(base)                       ((base)->CLP0)
+                                                  ~~~~~~~~^~~~
+Adc.c(38): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        auxMinus= ADC0_CLM0;
+                ~ ^~~~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(594): note: expanded from macro 'ADC0_CLM0'
+#define ADC0_CLM0                                ADC_CLM0_REG(ADC0)
+                                                 ^~~~~~~~~~~~~~~~~~
+C:/Users/Alex/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include\MKL25Z4.h(316): note: expanded from macro 'ADC_CLM0_REG'
+#define ADC_CLM0_REG(base)                       ((base)->CLM0)
+                                                  ~~~~~~~~^~~~
+Adc.c(48): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+Adc.c(23): warning: no previous prototype for function 'calibrateADC' [-Wmissing-prototypes]
+void calibrateADC()
+     ^
+./Adc.h(6): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+void calibrateADC(); // Calibrarea adc ului
+     ^
+                  void
+Adc.c(23): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void calibrateADC()
+                 ^
+8 warnings generated.
+compiling Adc.c...
+Uart.c(3): warning: no previous extern declaration for non-static variable 'osr' [-Wmissing-variable-declarations]
+uint32_t osr = 15; // 15 pentru ca in UART0->C4 se poate scrie osr in maxim 4 biti si este un raport de esntionare
+         ^
+Uart.c(3): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t osr = 15; // 15 pentru ca in UART0->C4 se poate scrie osr in maxim 4 biti si este un raport de esntionare
+^
+Uart.c(10): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_TDRE_MASK));
+                                                ^
+Uart.c(10): note: put the semicolon on a separate line to silence this warning
+Uart.c(18): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_RDRF_MASK));
+                                                ^
+Uart.c(18): note: put the semicolon on a separate line to silence this warning
+Uart.c(4): warning: no previous extern declaration for non-static variable 'sbr' [-Wmissing-variable-declarations]
+uint16_t sbr;
+         ^
+Uart.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint16_t sbr;
+^
+Uart.c(5): warning: no previous extern declaration for non-static variable 'temp' [-Wmissing-variable-declarations]
+uint8_t temp;
+        ^
+Uart.c(5): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t temp;
+^
+5 warnings generated.
+compiling Uart.c...
+Pit.c(19): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+1 warning generated.
+compiling Pit.c...
+main.c(3): warning: In file included from...
+./Adc.h(6): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void calibrateADC(); // Calibrarea adc ului
+                 ^
+                  void
+./Adc.h(6): warning: no newline at end of file [-Wnewline-eof]
+void calibrateADC(); // Calibrarea adc ului
+                                           ^
+main.c(8): warning: no previous prototype for function 'PIT_IRQHandler' [-Wmissing-prototypes]
+void PIT_IRQHandler(void)
+     ^
+main.c(8): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void PIT_IRQHandler(void)
+^
+static 
+main.c(26): warning: no previous extern declaration for non-static variable 'mystring' [-Wmissing-variable-declarations]
+char mystring[]="000";
+     ^
+main.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char mystring[]="000";
+^
+main.c(27): warning: no previous extern declaration for non-static variable 'current_index' [-Wmissing-variable-declarations]
+int current_index = 0;
+    ^
+main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int current_index = 0;
+^
+main.c(28): warning: no previous extern declaration for non-static variable 'size' [-Wmissing-variable-declarations]
+int size = 6;
+    ^
+main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int size = 6;
+^
+main.c(29): warning: no previous prototype for function 'Convert_8b_to_Decimal_String' [-Wmissing-prototypes]
+void Convert_8b_to_Decimal_String(uint32_t data)
+     ^
+main.c(29): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Convert_8b_to_Decimal_String(uint32_t data)
+^
+static 
+main.c(60): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+main.c(58): warning: 'return' will never be executed [-Wunreachable-code-return]
+        return 0;
+               ^
+main.c(6): warning: no previous extern declaration for non-static variable 'dataOverInterval' [-Wmissing-variable-declarations]
+uint32_t dataOverInterval;
+         ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t dataOverInterval;
+^
+10 warnings generated.
+compiling main.c...
+compiling system_MKL25Z4.c...
+assembling startup_MKL25Z4.s...
+linking...
+Program Size: Code=1696 RO-data=224 RW-data=4 ZI-data=360  
+".\Objects\TEST1.axf" - 0 Error(s), 24 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: Startup Version: 2.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MKL25Z128xxx4
+  .\RTE\_Target_1
+  C:\Users\Alex\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\Alex\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.5.0
+      Include file:  Device\Source\system_MKL25Z4.h
+      Source file:   Device\Source\system_MKL25Z4.c
+      Source file:   Device\Source\ARM\startup_MKL25Z4.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
